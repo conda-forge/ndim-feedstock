@@ -1,5 +1,5 @@
 {% set name = "ndim" %}
-{% set version = "0.1.4" %}
+{% set version = "0.1.5" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/ndim-{{ version }}.tar.gz
-  sha256: 5b2b6316463a9ab152db2961e10ddf90bec0d05eb09530ad5b24498ad6327199
+  sha256: 44f7edcc32cc938a392b189fa02ee97d6af9e8b823edeeac627d6c325a5d21a4
 
 build:
   number: 0
@@ -37,7 +37,7 @@ about:
   license: GPL-3.0-only
   license_family: GPL
   license_file: LICENSE
-  summary: 'Compute multidimensional volumes and monomial integrals.'
+  summary: Compute multidimensional volumes and monomial integrals.
   description: |
     ndim computes all kinds of volumes and integrals of monomials over 
     such volumes in a fast, numerically stable way, using recurrence
