@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  name: ndim
+  version: "0.1.6"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.io/packages/source/${{ name[0] }}/${{ name }}/ndim-${{ version }}.tar.gz
+  sha256: 53873dfcd1fbf0b9b0e9751bc8b401277acfe6be07bcb92b1a161ce4ccf5668d
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - pip
+    - python >=3.5
+    - flit-core
+    - sympy
+  run:
+    - importlib-metadata
+    - python >=3.5
+    - sympy
+
+tests:
+  - python:
+      imports:
+        - ndim
+      pip_check: true
+
+      python_version: ${{ python_min }}.*
+about:
+  license: GPL-3.0-only
+  license_file: LICENSE
+  summary: Compute multidimensional volumes and monomial integrals.
+  description: |
+    ndim computes all kinds of volumes and integrals of monomials over
+    such volumes in a fast, numerically stable way, using recurrence
+    relations.
+  homepage: https://github.com/nschloe/ndim
+  repository: https://github.com/nschloe/ndim
+  documentation: https://github.com/nschloe/ndim
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
